@@ -31,7 +31,11 @@ end
 
 post '/create' do
 	#replace this
-	return params.to_s
+    blog = Post.new
+    blog.title = params[:Title]
+    blog.body = params[:Body]
+    blog.save
+	return "Posted Successfully!"
 end
 
 get '/' do
